@@ -1,20 +1,20 @@
 package com.example;
 
 public class Fibonacci {
-    public static void main(String[] args) {
-        int n = 10, firstTerm = 0, secondTerm = 1;
-        System.out.println("Fibonacci Series up to " + n + " terms:");
-
+    
+    public static String generateSeries(int n) {
+        int firstTerm = 0, secondTerm = 1;
+        StringBuilder result = new StringBuilder();
         for (int i = 1; i <= n; ++i) {
-            System.out.print(firstTerm + ", ");
+            result.append(firstTerm).append(" ");
             int nextTerm = firstTerm + secondTerm;
             firstTerm = secondTerm;
             secondTerm = nextTerm;
         }
+        return result.toString().trim();
     }
 
-    public static Object generateSeries(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'generateSeries'");
+    public static void main(String[] args) {
+        System.out.println("Fibonacci Series: " + generateSeries(10));
     }
 }
